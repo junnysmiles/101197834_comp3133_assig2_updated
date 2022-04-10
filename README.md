@@ -1,5 +1,8 @@
 # 101197834Comp3133Assig2Updated
 
+## Previous Repo before the dependency issues
+ [Previous Repo](https://github.com/junnysmiles/101197834_comp3133_assig2)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.0.
 
 ## Development server
