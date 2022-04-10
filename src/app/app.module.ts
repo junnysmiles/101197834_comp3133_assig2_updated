@@ -24,13 +24,18 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatListModule } from '@angular/material/list';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { CustomerdashboardComponent } from './customerdashboard/customerdashboard.component';
+import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListingslistComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    CustomerdashboardComponent,
+    AdmindashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +54,8 @@ import { MatSelectModule } from '@angular/material/select';
     ReactiveFormsModule,
     MatSelectModule,
     HttpClientModule,
-    ApolloModule
+    ApolloModule,
+    Ng2SearchPipeModule
   ],
   providers: [
     {

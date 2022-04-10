@@ -10,7 +10,9 @@ import { Listing } from '../models/listing';
 export class ListingslistComponent implements OnInit {
 
   value = 'Search';
-  listings = []
+  listings = [];
+  searchTerm = ''
+  term = ''
 
   private GET_LISTINGS = gql`
     query {
