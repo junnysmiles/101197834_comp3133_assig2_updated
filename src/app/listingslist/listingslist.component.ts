@@ -13,28 +13,31 @@ export class ListingslistComponent implements OnInit {
   listings = []
 
   private GET_LISTINGS = gql`
-    query viewAllListings {
-      listing_id
-      listing_title
-      description
-      street
-      city
-      postal_code
-      price
-      email
-      username
+    query {
+      viewAllListings {
+        listing_id
+        listing_title
+        description
+        street
+        city
+        postal_code
+        price
+        email
+        username
+      }
     }`;
 
-  constructor(private apolloClient: Apollo) { }
+  constructor(private apolloClient: Apollo) {
+    this.getListings()
+  }
 
   getListings() {
-    this.apolloClient.watchQuery<any>({
+    this.apolloClient.query<any>({
       query: this.GET_LISTINGS,
-      errorPolicy: 'all'
-    }).valueChanges.subscribe(response => {
+    }).subscribe(response => {
       console.log(response)
       console.log(response.data)
-      this.listings = response.data?.listings
+      this.listings = response.data?.viewAllListings
     })
   }
 
