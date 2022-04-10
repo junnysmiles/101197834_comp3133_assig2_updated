@@ -5,12 +5,12 @@
  
  ## Users
  Admin-
- username: hermionegranger
- password: hermionegranger
+** username: hermionegranger**
+** password: hermionegranger**
  
  Customer-
- username: harrypotter
- password: harrypotter
+** username: harrypotter
+ password: harrypotter**
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.0.
 
