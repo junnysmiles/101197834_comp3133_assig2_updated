@@ -1,1 +1,77 @@
-<p>createlisting works!</p>
+<body class="">
+  <div>
+    <h1>
+      <a href="/admin"><mat-icon style="padding: 40px 0px 20px 50px; font-size:50px;" color="accent">arrow_back_ios</mat-icon></a>
+    </h1>
+  </div>
+  <div class="center-text">
+    <h1 class="mat-display-2">Create a Listing</h1>
+  </div>
+  <div class="center-text">
+    <mat-form-field class="field-width" appearance="fill">
+      <mat-label>Listing ID</mat-label>
+      <input type="text" matInput placeholder="A" [(ngModel)]="Id" [formControl]="id" required>
+      <mat-error *ngIf="id.invalid">{{getIdErrorMessage()}}</mat-error>
+    </mat-form-field>
+  </div>
+  <div class="center-text">
+    <mat-form-field class="field-width" appearance="fill">
+      <mat-label>Listing Title</mat-label>
+      <input type="text" matInput placeholder="Amazing Home" [(ngModel)]="lTitle" [formControl]="title" required>
+      <mat-error *ngIf="title.invalid">{{getTitleErrorMessage()}}</mat-error>
+    </mat-form-field>
+  </div>
+  <div class="center-text">
+    <mat-form-field class="field-width" appearance="fill">
+      <mat-label>Description</mat-label>
+      <textarea type="text" matInput placeholder="This home is amazing..." [(ngModel)]="desc" [formControl]="description" required></textarea>
+      <mat-error *ngIf="description.invalid">{{getDescErrorMessage()}}</mat-error>
+    </mat-form-field>
+  </div>
+  <div>
+    <table style="margin-left: auto; margin-right: auto; margin-bottom: 12px;" cellspacing="0"><tr>
+      <td><mat-form-field style="float:left;" appearance="fill">
+        <mat-label>Street</mat-label>
+        <input type="text" matInput placeholder="123 Home Avenue" [(ngModel)]="Street" [formControl]="street" required>
+        <mat-error *ngIf="street.invalid">{{getStreetErrorMessage()}}</mat-error>
+      </mat-form-field></td>
+      <td><mat-form-field appearance="fill">
+        <mat-label>City</mat-label>
+        <input matInput type="text" matInput placeholder="Toronto" [(ngModel)]="City" [formControl]="city" required>
+        <mat-error *ngIf="city.invalid">{{getCityErrorMessage()}}</mat-error>
+      </mat-form-field></td>
+    </tr></table>
+  </div>
+  <div class="center-text mat-app-background">
+    <mat-form-field class="field-width" appearance="fill">
+      <mat-label>Postal Code</mat-label>
+      <textarea type="text" matInput placeholder="A1B 2C3" [(ngModel)]="postalcode" [formControl]="zip" required></textarea>
+      <mat-error *ngIf="zip.invalid">{{getZipErrorMessage()}}</mat-error>
+    </mat-form-field>
+  </div>
+
+  <div class="center-text mat-app-background">
+    <mat-form-field class="field-width" appearance="fill">
+      <mat-label>Price</mat-label>
+      <textarea type="number" matInput placeholder="50" [(ngModel)]="Price" [formControl]="price" required></textarea>
+      <mat-error *ngIf="price.invalid">{{getPriceErrorMessage()}}</mat-error>
+    </mat-form-field>
+  </div>
+  <div class="mat-app-background">
+    <table style="margin-left: auto; margin-right: auto;" cellspacing="0"><tr>
+      <td><mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input type="text" matInput placeholder="johnsmith@gmail.com" [(ngModel)]="Email" [formControl]="email" required>
+        <mat-error *ngIf="email.invalid">{{getEmailErrorMessage()}}</mat-error>
+      </mat-form-field></td>
+      <td><mat-form-field appearance="fill">
+        <mat-label>Username</mat-label>
+        <input matInput type="text" matInput placeholder="johnsmith" [(ngModel)]="user" [formControl]="username" required>
+        <mat-error *ngIf="username.invalid">{{getUserErrorMessage()}}</mat-error>
+      </mat-form-field></td>
+    </tr></table>
+  </div>
+  <div class="center-text mat-app-background" style="padding-top:10px; padding-bottom: 20px;">
+    <button (click)="addNewListing()" mat-raised-button color="accent">Add Listing</button>
+  </div>
+</body>

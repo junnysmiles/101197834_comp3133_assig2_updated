@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { Apollo, gql } from 'apollo-angular';
 import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private apolloClient: Apollo, private router: Router) { }
+  constructor(private apolloClient: Apollo, private router: Router, private signupAlert: MatSnackBar) { }
 
   ngOnInit(): void {
   }
@@ -54,6 +55,19 @@ export class LoginComponent implements OnInit {
     }
 
     return this.password.hasError('password') ? 'Not a valid password' : '';
+  }
+
+  loginUser () {
+    if(this.user == "hermionegranger" && this.pass == "hermionegranger") {
+      this.router.navigate(['/admin'])
+      this.signupAlert.open("Logged In As Admin Successfully!", "Close")
+    }
+    if(this.user == "harrypotter" && this.pass == "harrypotter") {
+      this.router.navigate(['/customer'])
+      this.signupAlert.open("Logged In As Customer Successfully!", "Close")
+    } else {
+      this.signupAlert.open("Hmm... Something is Wrong Here...", "Close")
+    }
   }
 
   // loginUser() {

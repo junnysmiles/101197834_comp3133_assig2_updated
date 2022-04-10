@@ -45,7 +45,7 @@
       </button>
     </mat-form-field>
   </div>
-  <div class="center-text">
+  <div class="center-text mat-app-background">
     <mat-form-field class="field-width" appearance="fill">
       <mat-label>User Type</mat-label>
       <mat-select [(ngModel)]="usertype" [formControl]="selected" [errorStateMatcher]="matcher">
@@ -55,7 +55,7 @@
       <mat-error *ngIf="selected.hasError('required')">You must make a selection</mat-error>
     </mat-form-field>
   </div>
-  <div class="center-text" style="padding-top:10px;">
+  <div class="center-text mat-app-background" style="padding-top:10px;">
     <button (click)="addNewUser()" mat-raised-button color="accent">Signup</button>
   </div>
   <div class="mat-app-background">

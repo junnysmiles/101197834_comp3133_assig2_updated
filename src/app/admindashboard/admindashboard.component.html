@@ -1,3 +1,37 @@
 <body class="mat-app-background">
-
+  <div style="padding: 50px 10px 0px">
+    <h1 class="mat-display-2" style="text-align:center">Stays Created</h1>
+  </div>
+  <div style="padding-right: 35px; float: right;">
+    <button mat-raised-button color="accent" routerLink="/admin/create-a-listing">Create a Listing</button>
+  </div>
+  <div class="mat-app-background">
+    <div style="padding-left: 20px;">
+      <mat-form-field class="field-width" appearance="fill">
+        <mat-label>Search...</mat-label>
+        <input matInput type="search" [(ngModel)]="term" class="searchTerm">
+        <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+    <div *ngFor="let listing of listings | filter:term" style="padding: 10px 20px">
+      <mat-card style="padding: 25px" class="example-ripple-container mat-elevation-z4"
+      matRipple routerLink="">
+        <img src="../assets/logo.png" routerLink="/" height="200px" width="200px" style="float: left; padding-right: 50px;"/>
+        <mat-card-title>{{ listing["listing_title"]}}</mat-card-title>
+        <mat-card-subtitle>{{ listing["description"] }}</mat-card-subtitle>
+        <mat-card-content>Address: {{ listing["street"] }}, {{ listing["city"] }}, {{ listing["postal_code"] }}</mat-card-content>
+        <mat-card-content>Price Per Night: ${{ listing["price"] }}</mat-card-content>
+        <mat-card-content>Listing By: {{ listing["username"] }}</mat-card-content>
+        <mat-card-content>Contact: {{ listing["email"] }}</mat-card-content>
+        <div style="padding-bottom: 15px; padding-top: 15px; text-align: center;">
+          <button mat-raised-button color="accent" routerLink="/login">Login to Book</button>
+        </div>
+        <mat-card-footer>
+          <mat-progress-bar mode="buffer"></mat-progress-bar>
+        </mat-card-footer>
+      </mat-card>
+    </div>
+  </div>
 </body>
