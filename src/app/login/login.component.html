@@ -10,14 +10,14 @@
   <div class="center-text">
     <mat-form-field class="field-width" appearance="fill">
       <mat-label>Enter your username</mat-label>
-      <input type="text" matInput [formControl]="username" placeholder="user123" required>
+      <input type="text" [(ngModel)]="user" matInput [formControl]="username" placeholder="user123" required>
       <mat-error *ngIf="username.invalid">{{getUsernameErrorMessage()}}</mat-error>
     </mat-form-field>
   </div>
   <div class="center-text">
     <mat-form-field class="field-width" appearance="fill">
       <mat-label>Enter your password</mat-label>
-      <input type="password" matInput [type]="hide ? 'password' : 'text'" [formControl]="password">
+      <input type="password" [(ngModel)]="pass" matInput [type]="hide ? 'password' : 'text'" [formControl]="password">
       <mat-error *ngIf="password.invalid">{{getPassErrorMessage()}}</mat-error>
       <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
         <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
@@ -25,7 +25,7 @@
     </mat-form-field>
   </div>
   <div class="center-text" style="padding-top:10px;">
-    <button mat-raised-button color="accent">Login</button>
+    <button routerLink="/admin" mat-raised-button color="accent">Login</button>
   </div>
   <div class="divider">
     <mat-divider></mat-divider>
