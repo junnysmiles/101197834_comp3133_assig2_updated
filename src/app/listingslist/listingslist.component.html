@@ -15,9 +15,16 @@
     <div *ngFor="let listing of listings" style="padding: 10px 20px">
       <mat-card style="padding: 25px" class="example-ripple-container mat-elevation-z4"
       matRipple routerLink="">
+        <img src="../assets/logo.png" routerLink="/" height="200px" width="200px" style="float: left; padding-right: 50px;"/>
         <mat-card-title>{{ listing["listing_title"]}}</mat-card-title>
         <mat-card-subtitle>{{ listing["description"] }}</mat-card-subtitle>
-        <mat-card-content>{{ listing["street"] }}</mat-card-content>
+        <mat-card-content>Address: {{ listing["street"] }}, {{ listing["city"] }}, {{ listing["postal_code"] }}</mat-card-content>
+        <mat-card-content>Price Per Night: ${{ listing["price"] }}</mat-card-content>
+        <mat-card-content>Listing By: {{ listing["username"] }}</mat-card-content>
+        <mat-card-content>Contact: {{ listing["email"] }}</mat-card-content>
+        <div style="padding-bottom: 15px; padding-top: 15px; text-align: center;">
+          <button mat-raised-button color="accent" routerLink="/login">Login to Book</button>
+        </div>
         <mat-card-footer>
           <mat-progress-bar mode="buffer"></mat-progress-bar>
         </mat-card-footer>
