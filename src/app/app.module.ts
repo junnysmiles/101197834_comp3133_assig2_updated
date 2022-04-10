@@ -27,6 +27,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { CustomerdashboardComponent } from './customerdashboard/customerdashboard.component';
 import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
+import { CreatelistingComponent } from './createlisting/createlisting.component';
+import { BookedlistingsComponent } from './bookedlistings/bookedlistings.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { AdmindashboardComponent } from './admindashboard/admindashboard.compone
     LoginComponent,
     SignupComponent,
     CustomerdashboardComponent,
-    AdmindashboardComponent
+    AdmindashboardComponent,
+    CreatelistingComponent,
+    BookedlistingsComponent
   ],
   imports: [
     BrowserModule,
