@@ -7,6 +7,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ListingslistComponent } from './listingslist/listingslist.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import { CustomerdashboardComponent } from './customerdashboard/customerdashboard.component';
+import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
+import { CreatelistingComponent } from './createlisting/createlisting.component';
+import { BookedlistingsComponent } from './bookedlistings/bookedlistings.component';
+
 
 import { HttpClientModule } from '@angular/common/http';
 import { ApolloModule, APOLLO_OPTIONS } from 'apollo-angular';
@@ -25,10 +30,7 @@ import { MatListModule } from '@angular/material/list';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
-import { CustomerdashboardComponent } from './customerdashboard/customerdashboard.component';
-import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
-import { CreatelistingComponent } from './createlisting/createlisting.component';
-import { BookedlistingsComponent } from './bookedlistings/bookedlistings.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -59,7 +61,8 @@ import { BookedlistingsComponent } from './bookedlistings/bookedlistings.compone
     MatSelectModule,
     HttpClientModule,
     ApolloModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+    MatSnackBarModule
   ],
   providers: [
     {
