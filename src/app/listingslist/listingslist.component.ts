@@ -13,7 +13,7 @@ export class ListingslistComponent implements OnInit {
   listings = []
 
   private GET_LISTINGS = gql`
-    query viewAllListings() {
+    query viewAllListings {
       listing_id
       listing_title
       description
