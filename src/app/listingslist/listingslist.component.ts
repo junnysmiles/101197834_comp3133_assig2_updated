@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Apollo, gql } from 'apollo-angular';
-import { Listing } from '../models/listing';
 
 @Component({
   selector: 'app-listingslist',
