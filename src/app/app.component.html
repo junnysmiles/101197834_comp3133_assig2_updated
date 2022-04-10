@@ -5,12 +5,17 @@
       <span routerLink="/">Lit Stay-cations</span>
       <span class="spacer"></span>
       <div style="padding-right: 15px;">
-        <button mat-raised-button color="accent" routerLink="/login">
+        <button mat-raised-button color="accent" *ngIf="isNavigated()" routerLink="/login">
           Login
         </button>
         <div class="space"></div>
-        <button mat-raised-button color="accent" routerLink="/signup">
+        <button mat-raised-button color="accent" *ngIf="isNavigated()" routerLink="/signup">
           Signup
+        </button>
+      </div>
+      <div style="padding-right: 20px;">
+        <button mat-raised-button color="accent" *ngIf="isLoggedIn()" routerLink="/">
+          Logout
         </button>
       </div>
     </mat-toolbar>

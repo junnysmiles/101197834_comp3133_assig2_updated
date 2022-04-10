@@ -21,8 +21,8 @@
           </div>
           <div *ngFor="let listing of listings | filter:term" style="padding: 10px 20px">
             <mat-card style="padding: 25px" class="example-ripple-container mat-elevation-z4"
-            matRipple routerLink="">
-              <img src="../assets/logo.png" routerLink="/" height="200px" width="200px" style="float: left; padding-right: 50px;"/>
+            matRipple>
+              <img src="../assets/logo.png" height="200px" width="200px" style="float: left; padding-right: 50px;"/>
               <mat-card-title>{{ listing["listing_title"]}}</mat-card-title>
               <mat-card-subtitle>{{ listing["description"] }}</mat-card-subtitle>
               <mat-card-content>Address: {{ listing["street"] }}, {{ listing["city"] }}, {{ listing["postal_code"] }}</mat-card-content>
@@ -45,7 +45,7 @@
           <mat-icon style="padding-right: 5px;">card_travel</mat-icon>
           Booked Stays
         </ng-template>
-        Content 2
+
       </mat-tab>
     </mat-tab-group>
   </div>
